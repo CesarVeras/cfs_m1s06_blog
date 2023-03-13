@@ -1,12 +1,21 @@
 const sectionPosts = document.querySelector('[data-posts]');
+const btnCarregar = document.querySelector('[data-carregar]');
 
 let pagina = 1;
 let limitePorPagina = 20;
+let chegouNoFim = false;
 
 
-
-const carregarPosts = (pagina, limite) => {
+const carregarPosts = () => {
+	if (chegouNoFim) btnCarregar.style.display = 'none';
 	fetch(`https://jsonplaceholder.typicode.com/posts?_page=${pagina}&_limit=${limitePorPagina}`).then(data => data.json()).then(data => {
+		if (data.length < limitePorPagina) {
+			chegouNoFim = true;
+			btnCarregar.style.display = 'none';
+		} else {
+			btnCarregar.style.display = 'block';
+			pagina++;
+		}
 		data.map(post => {
 			sectionPosts.insertAdjacentHTML(
 				'beforeend', 
@@ -21,4 +30,6 @@ const carregarPosts = (pagina, limite) => {
 	});
 };
 
-carregarPosts(pagina, limitePorPagina);
+carregarPosts();
+
+btnCarregar.addEventListener('click', carregarPosts);

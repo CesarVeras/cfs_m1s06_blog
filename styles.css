@@ -13,7 +13,7 @@ body {
 h1 {
 	font-size: 2.5rem;
 	text-align: center;
-	color: red;
+	color: purple;
 	text-transform: uppercase;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -27,7 +27,7 @@ h2 {
 }
 
 p {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 }
 
 .container {
@@ -40,13 +40,31 @@ p {
 }
 
 article {	
-	border-top: 1px solid blue;
+	border-top: 1px dotted blue;
 }
 
 section article:first-child {
 	border: 0;
 }
 
-article h2 {
-	color: purple
+.button-container {
+	display: flex;
+	place-content: center;
+}
+
+button {
+	background-image: linear-gradient(to right, red, blue);
+	color: #FFF;
+	border: 0;
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	border-radius: 5px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+button:is(:hover, :focus) {
+	filter: grayscale(30%);
+	scale: 1.1;
 }
