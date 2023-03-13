@@ -22,6 +22,10 @@ h2 {
 	font-size: 1.8rem;
 }
 
+h3 {
+	font-size: 1rem;
+}
+
 :is(h1, h2, p)::first-letter {
 	text-transform: uppercase;
 }
@@ -43,7 +47,11 @@ article {
 	border-top: 1px dotted blue;
 }
 
-section article:first-child {
+.button-container article{
+	cursor: pointer;
+}
+
+:is(section,dialog) article:first-child {
 	border: 0;
 }
 
@@ -67,4 +75,26 @@ button {
 button:is(:hover, :focus) {
 	filter: grayscale(30%);
 	scale: 1.1;
+}
+
+dialog {
+	max-width: 50dvw;
+	max-height: 80dvh;
+	position: relative;
+	padding-top: 2rem;
+	box-shadow: 2px 2px 5px 2px rgba(0 0 0 / 40%);
+}
+
+::backdrop {
+	background-color: rgba(0 0 0 / 70%);
+}
+
+.btn-modal {
+	background: none;
+	color: #000;
+	font-size: 4rem;
+	font-weight: bold;
+	padding: 0;
+	position: absolute;
+	inset: 0 .5rem auto auto;
 }
