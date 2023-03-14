@@ -28,13 +28,13 @@
 
 
 
-## Exercício 8 [ ]
+## Exercício 8 [x]
 
 
 
-## Exercício 9 [ ]
+## Exercício 9 [x]
 
 
 
-## Exercício 10 [ ]
+## Exercício 10 [x]
 
